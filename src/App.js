@@ -4,8 +4,8 @@ import './App.css';
 class App extends Component {
 
   state = {
-    baseUrl: "https://images-api.nasa.gov/search?q=",
-    query: 'moon',
+    baseUrl: "http://10.0.2.2:8080/images?q=",
+    query: 'clouds',
     images: []
   }
 
@@ -26,15 +26,10 @@ class App extends Component {
     fetch(this.state.baseUrl+this.state.query)
     .then(data => data.json())
     .then(data => {
+      console.log(data);
+      
       this.setState({
-        images:
-          data
-            .collection
-            .items
-            .map(item => item.links)
-            .flat()
-            .filter(link => link.rel === "preview")
-            .map(link => link.href)
+        images: data
       })
     })
   }
