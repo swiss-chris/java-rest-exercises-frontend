@@ -5,7 +5,7 @@ class App extends Component {
 
   state = {
     baseUrl: "https://images-api.nasa.gov/search?q=",
-    query: 'moon',
+    query: 'clouds',
     images: []
   }
 
