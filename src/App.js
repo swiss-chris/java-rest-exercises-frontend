@@ -25,9 +25,7 @@ class App extends Component {
   fetchData(){
     fetch(this.state.baseUrl+this.state.query)
     .then(data => data.json())
-    .then(data => {
-      console.log(data);
-      
+    .then(data => {      
       this.setState({
         images: data
       })
