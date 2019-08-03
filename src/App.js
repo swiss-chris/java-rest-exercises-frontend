@@ -31,6 +31,7 @@ class App extends Component {
           data
             .collection
             .items
+            .filter(item => item.links)
             .map(item => item.links)
             .flat()
             .filter(link => link.rel === "preview")
